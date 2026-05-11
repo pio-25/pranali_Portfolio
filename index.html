@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranali Nalavde | Player Dashboard</title>
+    <meta name="description" content="Professional Player Dashboard Portfolio of Pranali Nalavde - Web Developer and UI/UX Designer.">
+    <meta property="og:title" content="Pranali Nalavde | Player Dashboard">
+    <meta property="og:description" content="Explore missions, stats, and professional quests in this interactive game-themed portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+</head>
+
+    <!-- Game Loader Overlay -->
+    <div class="game-loader" id="gameLoader">
+        <div class="loader-container">
+            <div class="loader-terminal">
+                <div class="status-line">
+                    <span class="terminal-prompt">user@portfolio:~$</span>
+                    <span class="terminal-cmd">init_game_engine()</span>
+                </div>
+            </div>
+            <div class="loader-status-line">
+                <span id="loaderStatusText">Initializing player dashboard...</span>
+            </div>
+            <div class="loader-bar-container">
+                <div class="loader-bar">
+                    <div class="loader-glow"></div>
+                    <div class="loader-progress" id="loaderProgress"></div>
+                </div>
+            </div>
+            <div class="loader-text" id="loaderText">0%</div>
+        </div>
+    </div>
+
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Main Content (hidden until loader 100%) -->
+    <div id="main-content" class="main-content loading-hidden">
+        <!-- HUD Navigation -->
+        <nav class="hud-nav" id="hudNav">
+
+        <div class="hud-progress-bar" id="scrollProgress"></div>
+        <div class="hud-container">
+            <a href="#hero" class="hud-logo">
+                <span class="logo-icon"></></span>
+                <span class="logo-text">PN</span>
+            </a>
+            <ul class="hud-menu" id="hudMenu">
+                <li><a href="#hero" class="hud-link active" data-section="hero"><i class="fas fa-home"></i><span>Base</span></a></li>
+                <li><a href="#about" class="hud-link" data-section="about"><i class="fas fa-id-card"></i><span>Profile</span></a></li>
+                <li><a href="#skills" class="hud-link" data-section="skills"><i class="fas fa-chart-bar"></i><span>Stats</span></a></li>
+                <li><a href="#projects" class="hud-link" data-section="projects"><i class="fas fa-rocket"></i><span>Missions</span></a></li>
+                <li><a href="#internship" class="hud-link" data-section="internship"><i class="fas fa-briefcase"></i><span>Quest</span></a></li>
+                <li><a href="#contact" class="hud-link" data-section="contact"><i class="fas fa-terminal"></i><span>Comms</span></a></li>
+            </ul>
+            <button class="hud-toggle" id="hudToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero + About Wrapper -->
+    <div class="hero-about-wrapper">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-badge">
+                    <span class="badge-icon"><i class="fas fa-crown"></i></span>
+                    <span class="badge-text">Level 1 Developer</span>
+                </div>
+                <div class="hero-avatar">
+                    <div class="avatar-ring">
+                        <div class="avatar-ring-inner"></div>
+                        <div class="avatar-ripple"></div>
+                        <img src="profile.png" alt="Pranali Nalavde Profile" class="avatar-img">
+                    </div>
+                    <div class="avatar-glow"></div>
+                </div>
+                <div class="hero-content">
+                    <p class="hero-greeting">Welcome, Player</p>
+                    <h1 class="hero-name">
+                        <span id="typewriter"></span><span class="cursor">|</span>
+                    </h1>
+                    <p class="hero-role">Web Developer / BBA-CA Graduate</p>
+                    <div class="hero-stats">
+                        <div class="stat-pill">
+                            <i class="fas fa-code"></i>
+                            <span>3+ Projects</span>
+                        </div>
+                        <div class="stat-pill">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>BBA-CA</span>
+                        </div>
+                        <div class="stat-pill">
+                            <i class="fas fa-palette"></i>
+                            <span>UI/UX Focus</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            <span>View Missions</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Initiate Contact</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-header">
+                <span class="section-tag">Player Profile</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-container">
+                <div class="about-card glass-card">
+                    <div class="about-card-header">
+                        <div class="about-avatar">
+                            <img src="profile.png" alt="Profile">
+                        </div>
+                        <div class="about-title">
+                            <h3>Pranali Nalavde</h3>
+                            <p class="about-class">Class: UI/UX Designer &amp; Web Developer</p>
+                            <div class="about-badges">
+                                <span class="badge rare"><i class="fas fa-graduation-cap"></i> Graduate</span>
+                                <span class="badge epic"><i class="fas fa-palette"></i> Designer</span>
+                                <span class="badge legendary"><i class="fas fa-code"></i> Developer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-body">
+                        <p class="about-summary">
+                            Designing Experiences, Not Just Websites. BBA-CA Graduate (Result Awaiting) focused on UI/UX design and building interactive, user-centered web interfaces.
+                        </p>
+                        <div class="about-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>BBA-CA</h4>
+                                    <p>PES's Modern College of Arts, Commerce &amp; Science (Autonomous), Pune</p>
+                                    <p>2023 - 2026 | Result Awaiting</p>
+                                    <div class="aggregate-scores">
+                                        <span class="aggregate-item"><i class="fas fa-chart-line"></i> Second Year CGPA: 8.68</span>
+                                        <span class="aggregate-item"><i class="fas fa-chart-line"></i> First Year CGPA: 8.00</span>
+                                    </div>
+                                    <span class="timeline-year">2025</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Higher Secondary Education (12th)</h4>
+                                    <p>Nowrosjee Wadia College, Pune</p>
+                                    <p>Maharashtra State Board | 2022 - 2023</p>
+                                    <span class="timeline-year">2023</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Secondary Education (10th)</h4>
+                                    <p>Maharashtra State Board</p>
+                                    <span class="timeline-year">2021</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="section-header">
+            <span class="section-tag">Skill Tree</span>
+            <h2 class="section-title">Stats &amp; Abilities</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="skills-container">
+            <div class="skills-category glass-card">
+                <div class="skills-cat-header">
+                    <i class="fas fa-code"></i>
+                    <h3>Technical Skills</h3>
+                </div>
+                <div class="skill-list">
+                    <div class="skill-item" data-level="90">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fab fa-html5"></i> HTML</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-level="85">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fab fa-css3-alt"></i> CSS</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-level="80">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-level">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-level="75">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fab fa-python"></i> Python</span>
+                            <span class="skill-level">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-level="70">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fab fa-node-js"></i> Node.js</span>
+                            <span class="skill-level">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-level="65">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fas fa-code"></i> C++</span>
+                            <span class="skill-level">65%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-level="88">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fas fa-paint-brush"></i> Canva</span>
+                            <span class="skill-level">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-category glass-card">
+                <div class="skills-cat-header">
+                    <i class="fas fa-users"></i>
+                    <h3>Soft Skills</h3>
+                </div>
+                <div class="skill-list">
+                    <div class="skill-item" data-level="92">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fas fa-comments"></i> Communication</span>
+                            <span class="skill-level">92%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-level="88">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fas fa-people-group"></i> Teamwork</span>
+                            <span class="skill-level">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item" data-level="85">
+                        <div class="skill-info">
+                            <span class="skill-name"><i class="fas fa-clock"></i> Time Management</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-fill"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="achievements-panel">
+                    <h4><i class="fas fa-trophy"></i> Achievements</h4>
+                    <div class="achievement-grid">
+                        <div class="achievement" title="Completed BBA-CA">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Scholar</span>
+                        </div>
+                        <div class="achievement" title="Built Full Stack App">
+                            <i class="fas fa-server"></i>
+                            <span>Architect</span>
+                        </div>
+                        <div class="achievement" title="React Project Deployed">
+                            <i class="fab fa-react"></i>
+                            <span>Frontend Master</span>
+                        </div>
+                        <div class="achievement" title="Canva Animation">
+                            <i class="fas fa-film"></i>
+                            <span>Creator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="section-header">
+            <span class="section-tag">Mission Control</span>
+            <h2 class="section-title">Projects</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="projects-container">
+            <!-- Project 1: Animation -->
+            <div class="project-card" data-project="animation">
+                <div class="project-glow"></div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-difficulty">Level 1</span>
+                        <span class="project-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="project-title">Animation Project</h3>
+                    <p class="project-desc">Creative animation design using Canva — visual storytelling and motion graphics.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Canva</span>
+                        <span class="tech-tag">Design</span>
+                        <span class="tech-tag">Animation</span>
+                    </div>
+                    <button class="btn btn-outline project-btn" onclick="openModal('animation')">
+                        <i class="fas fa-info-circle"></i> View Mission
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project 2: Smarket Full Stack -->
+            <div class="project-card featured" data-project="smarket">
+                <div class="project-glow"></div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-difficulty">Level 5</span>
+                        <span class="project-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="project-title">Smarket Application</h3>
+                    <p class="project-desc">Full-stack e-commerce platform for handmade crafts with real-time chat, payments, and admin dashboards.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Socket.IO</span>
+                    </div>
+                    <button class="btn btn-outline project-btn" onclick="openModal('smarket')">
+                        <i class="fas fa-info-circle"></i> View Mission
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project 3: React Internship -->
+            <div class="project-card" data-project="react">
+                <div class="project-glow"></div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <span class="project-difficulty">Level 3</span>
+                        <span class="project-status completed"><i class="fas fa-check-circle"></i> Completed</span>
+                    </div>
+                    <div class="project-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="project-title">React Internship Project</h3>
+                    <p class="project-desc">Frontend React application for handmade crafts marketplace with cart, routing, and responsive design.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <button class="btn btn-outline project-btn" onclick="openModal('react')">
+                        <i class="fas fa-info-circle"></i> View Mission
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internship Section -->
+    <section id="internship" class="internship-section">
+        <div class="section-header">
+            <span class="section-tag">Active Quest</span>
+            <h2 class="section-title">Internship Experience</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="internship-container">
+            <div class="internship-card glass-card">
+                <div class="internship-header">
+                    <div class="company-logo">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="internship-info">
+                        <h3>CGPI</h3>
+                        <p class="internship-role">Web Development Intern</p>
+                        <span class="internship-duration"><i class="fas fa-calendar-alt"></i> 1 Month</span>
+                    </div>
+                </div>
+                <div class="internship-body">
+                    <div class="internship-section">
+                        <h4><i class="fas fa-tasks"></i> Responsibilities</h4>
+                        <ul>
+                            <li>Developed responsive frontend components using React.js</li>
+                            <li>Implemented product catalog and shopping cart functionality</li>
+                            <li>Collaborated on UI/UX improvements for better user engagement</li>
+                            <li>Integrated REST APIs for dynamic data rendering</li>
+                        </ul>
+                    </div>
+                    <div class="internship-section">
+                        <h4><i class="fas fa-lightbulb"></i> Key Learnings</h4>
+                        <ul>
+                            <li>Component-based architecture in React</li>
+                            <li>State management using React Context API</li>
+                            <li>Responsive design principles and mobile-first approach</li>
+                            <li>Version control with Git and collaborative development</li>
+                            <li>Deployment process using GitHub Pages</li>
+                        </ul>
+                    </div>
+                    <div class="internship-section">
+                        <h4><i class="fas fa-tools"></i> Technologies Used</h4>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">GitHub Pages</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <span class="section-tag">Communication Terminal</span>
+            <h2 class="section-title">Contact</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-container">
+            <div class="terminal glass-card">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="terminal-title">contact.exe</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">user@portfolio:~$</span>
+                        <span class="terminal-cmd">initiate_contact --mode=professional</span>
+                    </div>
+                    <div class="terminal-output">
+                        <p><i class="fas fa-check"></i> Connection established...</p>
+                        <p><i class="fas fa-check"></i> Encryption: ENABLED</p>
+                        <p><i class="fas fa-check"></i> Ready for transmission.</p>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">user@portfolio:~$</span>
+                        <span class="terminal-cmd">show_contact_info</span>
+                    </div>
+                    <div class="terminal-output contact-grid">
+                        <a href="mailto:pranalinalavde05@gmail.com" class="contact-item" id="emailContactItem">
+                            <i class="fas fa-envelope"></i>
+                            <span>pranalinalavde05@gmail.com</span>
+                        </a>
+                        <a href="tel:+919876543210" class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 8237520019</span>
+                        </a>
+                        <a href="https://github.com/pio-25" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/pio-25</span>
+                        </a>
+                        <a href="https://linkedin.com/in/pranali-nalavde" target="_blank" rel="noopener noreferrer" class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/pranali-nalavde</span>
+                        </a>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">user@portfolio:~$</span>
+                        <span class="terminal-cursor">_</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">
+                <span class="footer-logo"></>Pranali Nalavde</span> 
+            </p>
+            <p class="footer-sub">Player Dashboard v1.0 | Built with <i class="fas fa-heart"></i> and Code</p>
+        </div>
+    </footer>
+
+<!-- Project Modals -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal glass-card" id="projectModal">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-scroll">
+                <div class="modal-content" id="modalContent">
+                    <!-- Dynamic content injected by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Achievement Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+    </div><!-- /main-content -->
+
+    <script src="script.js"></script>
+</body>
+</html>
