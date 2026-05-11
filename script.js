@@ -581,75 +581,72 @@ function initProjectModals() {
     function getProjectData(id) {
         const projects = {
             animation: `
-                <h2><i class="fas fa-film"></i> Animation Project</h2>
-                <p class="modal-subtitle">Creative animation design using Canva</p>
-                <h3><i class="fas fa-info-circle"></i> Overview</h3>
-                <p>A visually engaging animation project created using Canva's design and motion tools. The project demonstrates visual storytelling skills and creative design thinking.</p>
+                <h2><i class="fas fa-film"></i> Visual Motion Design</h2>
+                <p class="modal-subtitle">Branding & Creative Content Strategy</p>
+                <h3><i class="fas fa-info-circle"></i> Project Essence</h3>
+                <p>Designed a series of high-fidelity animations focusing on brand storytelling. This project involved deep exploration into typography, color theory, and motion physics to ensure maximum viewer engagement.</p>
                 <h3><i class="fas fa-tools"></i> Tools Used</h3>
                 <div class="modal-tech">
-                    <span class="tech-tag">Canva</span>
+                    <span class="tech-tag">Creative Design</span>
                     <span class="tech-tag">Motion Graphics</span>
                     <span class="tech-tag">Visual Design</span>
                 </div>
                 <h3><i class="fas fa-star"></i> Key Highlights</h3>
                 <ul>
-                    <li>Created engaging animated visuals for storytelling</li>
-                    <li>Demonstrated proficiency in Canva's animation features</li>
-                    <li>Applied design principles for motion graphics</li>
+                    <li>Engineered visual sequences for cross-platform digital marketing.</li>
+                    <li>Applied core principles of visual hierarchy and rhythm.</li>
+                    <li>Optimized assets for high-performance web rendering.</li>
                 </ul>
                 <a href="https://canva.link/7ovgtn6vdoasof6" target="_blank" rel="noopener noreferrer" class="modal-link">
                     <i class="fas fa-external-link-alt"></i> View Project
                 </a>
             `,
             smarket: `
-                <h2><i class="fas fa-shopping-bag"></i> Smarket Application</h2>
-                <p class="modal-subtitle">Full-Stack E-Commerce Platform for Handmade Crafts</p>
-                <h3><i class="fas fa-info-circle"></i> Overview</h3>
-                <p>Smarket is a comprehensive full-stack e-commerce platform built for selling handmade crafts. It features real-time chat, admin dashboards, payment integration, and a multi-role user system (Admin, Seller, Buyer).</p>
-                <h3><i class="fas fa-tools"></i> Technologies Used</h3>
+                <h2><i class="fas fa-shopping-bag"></i> Smarket: UX Ecosystem</h2>
+                <p class="modal-subtitle">Full-Stack E-Commerce & User Experience Design</p>
+                <h3><i class="fas fa-info-circle"></i> Design Philosophy</h3>
+                <p>A user-centric marketplace designed to empower artisans. The focus was on reducing friction in the seller-buyer journey through intuitive navigation, clean UI patterns, and seamless real-time communication.</p>
+                <h3><i class="fas fa-tools"></i> Tech Stack</h3>
                 <div class="modal-tech">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">UX Strategy</span>
+                    <span class="tech-tag">System Design</span>
                     <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">SQLAlchemy</span>
+                    <span class="tech-tag">Backend Architecture</span>
                     <span class="tech-tag">Socket.IO</span>
                     <span class="tech-tag">JavaScript</span>
                     <span class="tech-tag">HTML/CSS</span>
                 </div>
                 <h3><i class="fas fa-star"></i> Key Features</h3>
                 <ul>
-                    <li>Real-time chat system between buyers and sellers</li>
-                    <li>Admin dashboard with sales analytics and reporting</li>
-                    <li>Product approval workflow for quality control</li>
-                    <li>Cart and wishlist functionality</li>
-                    <li>Order management with tracking</li>
-                    <li>Payment integration with invoice generation</li>
+                    <li>Architected a multi-role dashboard for sellers and administrators.</li>
+                    <li>Implemented high-fidelity search and filtering logic.</li>
+                    <li>Integrated secure payment gateways with automated invoice generation.</li>
+                    <li>Engineered a low-latency real-time chat system for peer-to-peer commerce.</li>
                 </ul>
                 <a href="#" class="modal-link" onclick="event.preventDefault(); showToast('This is a private project. Contact for demo access.');">
                     <i class="fas fa-lock"></i> Private Repository
                 </a>
             `,
             react: `
-                <h2><i class="fab fa-react"></i> React Internship Project</h2>
-                <p class="modal-subtitle">Handmade Crafts Marketplace - Frontend Application</p>
-                <h3><i class="fas fa-info-circle"></i> Overview</h3>
-                <p>A React-based frontend application for the Smarket marketplace, built during the internship at CGPI. Features product catalog, shopping cart, routing, and responsive design.</p>
-                <h3><i class="fas fa-tools"></i> Technologies Used</h3>
+                <h2><i class="fab fa-react"></i> Smarket: React Marketplace</h2>
+                <p class="modal-subtitle">Responsive Frontend Application Development</p>
+                <h3><i class="fas fa-info-circle"></i> Project Overview</h3>
+                <p>Developed the frontend of an e-commerce marketplace using React.js. The project focuses on creating a smooth, interactive shopping experience through dynamic product rendering and a modular component-based architecture.</p>
+                <h3><i class="fas fa-tools"></i> Tech Stack & Skills</h3>
                 <div class="modal-tech">
                     <span class="tech-tag">React.js</span>
-                    <span class="tech-tag">React Router</span>
-                    <span class="tech-tag">Context API</span>
+                    <span class="tech-tag">JavaScript</span>
                     <span class="tech-tag">HTML5</span>
                     <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">React Components</span>
+                    <span class="tech-tag">Frontend Development</span>
                 </div>
-                <h3><i class="fas fa-star"></i> Key Features</h3>
+                <h3><i class="fas fa-star"></i> Technical Highlights</h3>
                 <ul>
-                    <li>Responsive product catalog with filtering</li>
-                    <li>Shopping cart with add/remove functionality</li>
-                    <li>Multi-page routing with React Router</li>
-                    <li>Product detail pages with related items</li>
-                    <li>About and Contact sections</li>
+                    <li>Built with a component-based architecture for high maintainability and code reuse.</li>
+                    <li>Implemented dynamic product catalog rendering with search and filtering features.</li>
+                    <li>Developed interactive shopping cart logic for real-time user updates.</li>
+                    <li>Engineered a fully responsive layout to ensure a seamless experience on mobile and desktop.</li>
                 </ul>
                 <a href="https://pio-25.github.io/smarket-project/" target="_blank" rel="noopener noreferrer" class="modal-link">
                     <i class="fas fa-external-link-alt"></i> Live Demo

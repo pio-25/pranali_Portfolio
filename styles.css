@@ -256,12 +256,12 @@ body.cursor-custom .btn:focus-visible {
     --font-mono: 'JetBrains Mono', monospace;
 
     --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
+    --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.5s ease;
-    --panel-shadow: 0 20px 40px rgba(45, 74, 46, 0.20), 0 12px 20px rgba(45, 74, 46, 0.14), 0 4px 8px rgba(45, 74, 46, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    --panel-shadow: 0 20px 50px rgba(45, 74, 46, 0.12), 0 10px 20px rgba(45, 74, 46, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.4);
     --panel-shadow-soft: 0 12px 24px rgba(45, 74, 46, 0.15), 0 8px 12px rgba(45, 74, 46, 0.10), 0 2px 4px rgba(45, 74, 46, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.12);
-    --panel-shadow-hover: 0 32px 64px rgba(45, 74, 46, 0.25), 0 16px 32px rgba(45, 74, 46, 0.16), 0 8px 16px rgba(45, 74, 46, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.16);
-    --drop-shadow: 10px 10px 0px 0px #000;
+    --panel-shadow-hover: 0 40px 80px rgba(45, 74, 46, 0.18), 0 20px 40px rgba(45, 74, 46, 0.12), inset 0 0 0 1px var(--accent-primary);
+    --drop-shadow: 8px 8px 0px 0px rgba(231, 8, 102, 0.15);
     --section-separator: 1px solid rgba(45, 74, 46, 0.12);
 }
 
@@ -469,7 +469,7 @@ section:not(#hero) {
 .section-tag {
     display: inline-block;
     padding: 6px 16px;
-    background: rgba(255, 176, 176, 0.404);
+    background: rgba(245, 169, 193, 0.15);
     color: var(--accent-secondary);
     font-family: var(--font-mono);
     font-size: 0.75rem;
@@ -552,13 +552,14 @@ section:not(#hero) {
     padding-top: 80px;
     padding-bottom: 0;
     position: relative;
+    overflow: hidden;
 }
 
 .hero-container {
-    max-width: 800px;
+    max-width: 900px;
     width: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
+    padding: 0 24px;
 }
 
 .hero-badge {
@@ -771,6 +772,7 @@ section:not(#hero) {
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+    padding: 10px;
 }
 
 /* Buttons */
@@ -780,14 +782,14 @@ section:not(#hero) {
     gap: 10px;
     padding: 14px 28px;
     border-radius: var(--radius-sm);
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 700;
     text-decoration: none;
     cursor: pointer;
     border: none;
     transition: all var(--transition-fast);
     position: relative;
-    overflow: hidden;
+    letter-spacing: 0.5px;
 }
 
 .btn-primary {
