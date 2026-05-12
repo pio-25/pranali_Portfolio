@@ -726,7 +726,17 @@ section:not(#hero) {
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-bottom: 32px;
+    line-height: 1.4;
 }
+
+/* Keep hero role text readable on small screens */
+@media (max-width: 480px) {
+    .hero-role {
+        font-size: 0.95rem;
+        padding: 0 6px;
+    }
+}
+
 
 .hero-stats {
     display: flex;
