@@ -49,6 +49,12 @@ function playTapSound() {
    Matching c1.png - pixel style cat paw
    ============================================ */
 function initCustomCursor() {
+    // Detect if primary input is touch (coarse) rather than just presence of touch support
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouchDevice) {
+        document.body.classList.add('is-touch-device');
+    }
+
     // Create cursor element with cat paw structure
     const cursor = document.createElement('div');
     cursor.className = 'custom-cursor';
@@ -152,8 +158,8 @@ function initCustomCursor() {
 
         // Fade out custom cursor when approaching the right edge (scrollbar area)
         // basing it on actual mouse position for a smoother transition
-        const distFromRight = window.innerWidth - mouseX;
-        cursor.style.opacity = Math.max(0, Math.min(1, (distFromRight - 10) / 15));
+        const distFromRight = window.innerWidth - (mouseX + 16);
+        cursor.style.opacity = Math.max(0, Math.min(1, (distFromRight) / 20));
 
         // Create trail at intervals
         const dist = Math.sqrt(Math.pow(mouseX - cursorX, 2) + Math.pow(mouseY - cursorY, 2));
@@ -597,7 +603,7 @@ function initProjectModals() {
                     <li>Applied core principles of visual hierarchy and rhythm.</li>
                     <li>Optimized assets for high-performance web rendering.</li>
                 </ul>
-                <a href="https://canva.link/7ovgtn6vdoasof6" target="_blank" rel="noopener noreferrer" class="modal-link">
+                <a href="canva.html" class="modal-link">
                     <i class="fas fa-external-link-alt"></i> View Project
                 </a>
             `,
@@ -623,8 +629,8 @@ function initProjectModals() {
                     <li>Integrated secure payment gateways with automated invoice generation.</li>
                     <li>Engineered a low-latency real-time chat system for peer-to-peer commerce.</li>
                 </ul>
-                <a href="#" class="modal-link" onclick="event.preventDefault(); showToast('This is a private project. Contact for demo access.');">
-                    <i class="fas fa-lock"></i> Private Repository
+                <a href="smarket.html" class="modal-link">
+                    <i class="fas fa-external-link-alt"></i> View Project Showcase
                 </a>
             `,
             react: `

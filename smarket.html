@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smarket Showcase | UX Ecosystem</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="smarket.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>"
+    />
+  </head>
+  <body class="cursor-custom">
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Gallery Navigation -->
+    <nav class="gallery-nav">
+      <div class="hud-container">
+        <a href="index.html#projects" class="btn btn-secondary back-btn">
+          <i class="fas fa-arrow-left"></i> <span>Back to Projects</span>
+        </a>
+        <div class="gallery-branding">
+          <span class="logo-icon"><i class="fas fa-shopping-bag"></i></span>
+          <span class="logo-text">Smarket Showcase</span>
+        </div>
+      </div>
+    </nav>
+
+    <main class="gallery-main">
+      <header class="section-header">
+        <span class="section-tag">Smarket UX</span>
+        <h1 class="section-title">Ecosystem Visualization</h1>
+        <div class="section-line"></div>
+      </header>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- 1. Signup/Login Page -->
+        <div
+          class="gallery-card glass-card multi-image"
+          data-image="smarket/Signup.png"
+          data-images="smarket/Signup.png,smarket/Login.png"
+          data-captions="Signup Page,Login Page"
+          data-caption="Signup/Login Page"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Signup.png" alt="Signup/Login Page" loading="lazy" />
+            <div class="image-count-badge">
+              <i class="fas fa-layer-group"></i> 2 Screens
+            </div>
+            <div class="card-hover-overlay">
+              <i class="fas fa-images"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Signup/Login Page</h3>
+            <span class="tech-tag">Authentication UI</span>
+            <span class="tech-tag">User Access Flow</span>
+          </div>
+        </div>
+
+        <!-- 2. Profile Page -->
+        <div
+          class="gallery-card glass-card"
+          data-image="smarket/Profile.png"
+          data-caption="Profile Page"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Profile.png" alt="Profile Page" loading="lazy" />
+            <div class="card-hover-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Profile Page</h3>
+            <span class="tech-tag">User Profile</span>
+            <span class="tech-tag">Account Management</span>
+          </div>
+        </div>
+
+        <!-- 3. Home Page -->
+        <div
+          class="gallery-card glass-card multi-image"
+          data-image="smarket/Home1.png"
+          data-images="smarket/Home1.png,smarket/Home2.png,smarket/Home3.png"
+          data-captions="Home Page,Home Page,Home Page"
+          data-caption="Home Page"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Home1.png" alt="Home Page" loading="lazy" />
+            <div class="image-count-badge">
+              <i class="fas fa-layer-group"></i> 3 Screens
+            </div>
+            <div class="card-hover-overlay">
+              <i class="fas fa-images"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Home Page</h3>
+            <span class="tech-tag">Responsive Design</span>
+            <span class="tech-tag">Frontend Development</span>
+          </div>
+        </div>
+
+        <!-- 4. Seller Dashboard -->
+        <div
+          class="gallery-card glass-card multi-image"
+          data-image="smarket/Seller1.png"
+          data-images="smarket/Seller1.png,smarket/Seller2.png"
+          data-captions="Seller Dashboard,Seller Dashboard"
+          data-caption="Seller Dashboard"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Seller1.png" alt="Seller Dashboard" loading="lazy" />
+            <div class="image-count-badge">
+              <i class="fas fa-layer-group"></i> 2 Screens
+            </div>
+            <div class="card-hover-overlay">
+              <i class="fas fa-images"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Seller Dashboard</h3>
+            <span class="tech-tag">Dashboard Design</span>
+            <span class="tech-tag">Seller Portal</span>
+          </div>
+        </div>
+
+        <!-- 5. Category Page -->
+        <div
+          class="gallery-card glass-card multi-image"
+          data-image="smarket/Category1.png"
+          data-images="smarket/Category1.png,smarket/Category2.png,smarket/Category3.png,smarket/Category4.png"
+          data-captions="Baked Goods Category,Jewellery Category,Clothes Category,Paintings Category"
+          data-caption="Category Page"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Category1.png" alt="Category Page" loading="lazy" />
+            <div class="image-count-badge">
+              <i class="fas fa-layer-group"></i> 4 Screens
+            </div>
+            <div class="card-hover-overlay">
+              <i class="fas fa-images"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Category Page</h3>
+            <span class="tech-tag">Product Discovery</span>
+            <span class="tech-tag">Navigation UX</span>
+          </div>
+        </div>
+
+        <!-- 6. Product Page -->
+        <div
+          class="gallery-card glass-card"
+          data-image="smarket/Productpg.png"
+          data-caption="Product Page"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Productpg.png" alt="Product Page" loading="lazy" />
+            <div class="card-hover-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Product Page</h3>
+            <span class="tech-tag">E-Commerce UI</span>
+            <span class="tech-tag">Product Experience</span>
+          </div>
+        </div>
+
+        <!-- 7. Chat Page -->
+        <div
+          class="gallery-card glass-card"
+          data-image="smarket/Chatpg.png"
+          data-caption="Chat Page"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Chatpg.png" alt="Chat Page" loading="lazy" />
+            <div class="card-hover-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Chat Page</h3>
+            <span class="tech-tag">Messaging Interface</span>
+            <span class="tech-tag">Real-Time UX</span>
+          </div>
+        </div>
+
+        <!-- 8. Wishlist Page -->
+        <div
+          class="gallery-card glass-card"
+          data-image="smarket/Wishlistpg.png"
+          data-caption="Wishlist Page"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Wishlistpg.png" alt="Wishlist Page" loading="lazy" />
+            <div class="card-hover-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Wishlist Page</h3>
+            <span class="tech-tag">Wishlist Feature</span>
+            <span class="tech-tag">User Experience</span>
+          </div>
+        </div>
+
+        <!-- 9. Cart Page -->
+        <div
+          class="gallery-card glass-card"
+          data-image="smarket/Cartpg.png"
+          data-caption="Cart Page"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Cartpg.png" alt="Cart Page" loading="lazy" />
+            <div class="card-hover-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Cart Page</h3>
+            <span class="tech-tag">Shopping Cart UX</span>
+            <span class="tech-tag">Purchase Flow</span>
+          </div>
+        </div>
+
+        <!-- 10. Checkout Page -->
+        <div
+          class="gallery-card glass-card multi-image"
+          data-image="smarket/Checkout1.png"
+          data-images="smarket/Checkout1.png,smarket/Checkout2.png"
+          data-captions="Checkout Flow,Payment Experience"
+          data-caption="Checkout Page"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Checkout1.png" alt="Checkout Page" loading="lazy" />
+            <div class="image-count-badge">
+              <i class="fas fa-layer-group"></i> 2 Screens
+            </div>
+            <div class="card-hover-overlay">
+              <i class="fas fa-images"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Checkout Page</h3>
+            <span class="tech-tag">Checkout Flow</span>
+            <span class="tech-tag">Payment Experience</span>
+          </div>
+        </div>
+
+        <!-- 11. My Orders Page -->
+        <div
+          class="gallery-card glass-card multi-image"
+          data-image="smarket/MyOrders.png"
+          data-images="smarket/MyOrders.png,smarket/Invoice.png"
+          data-captions="Order Management,Invoice System"
+          data-caption="My Orders Page"
+        >
+          <div class="card-img-container">
+            <img src="smarket/MyOrders.png" alt="My Orders Page" loading="lazy" />
+            <div class="image-count-badge">
+              <i class="fas fa-layer-group"></i> 2 Screens
+            </div>
+            <div class="card-hover-overlay">
+              <i class="fas fa-images"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>My Orders Page</h3>
+            <span class="tech-tag">Order Management</span>
+            <span class="tech-tag">Invoice System</span>
+          </div>
+        </div>
+
+        <!-- 12. Notifications Page -->
+        <div
+          class="gallery-card glass-card"
+          data-image="smarket/Notification.png"
+          data-caption="Notifications Page"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Notification.png" alt="Notifications Page" loading="lazy" />
+            <div class="card-hover-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Notifications Page</h3>
+            <span class="tech-tag">Notification System</span>
+            <span class="tech-tag">User Alerts</span>
+          </div>
+        </div>
+
+        <!-- 13. Admin Dashboard -->
+        <div
+          class="gallery-card glass-card multi-image"
+          data-image="smarket/Adm1.png"
+          data-images="smarket/Adm1.png,smarket/Adm2.png,smarket/Adm3.png,smarket/Adm4.png,smarket/Adm5.png,smarket/Adm6.png"
+          data-captions="Admin Dashboard,Admin Dashboard,Admin Dashboard,Admin Dashboard,Admin Dashboard,Admin Dashboard"
+          data-caption="Admin Dashboard"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Adm1.png" alt="Admin Dashboard" loading="lazy" />
+            <div class="image-count-badge">
+              <i class="fas fa-layer-group"></i> 6 Screens
+            </div>
+            <div class="card-hover-overlay">
+              <i class="fas fa-images"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Admin Dashboard</h3>
+            <span class="tech-tag">Admin Panel</span>
+            <span class="tech-tag">Management Dashboard</span>
+          </div>
+        </div>
+
+        <!-- 14. Feedback Form -->
+        <div
+          class="gallery-card glass-card"
+          data-image="smarket/Feedback.png"
+          data-caption="Feedback Form"
+        >
+          <div class="card-img-container">
+            <img src="smarket/Feedback.png" alt="Feedback Form" loading="lazy" />
+            <div class="card-hover-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="card-meta">
+            <h3>Feedback Form</h3>
+            <span class="tech-tag">Feedback System</span>
+            <span class="tech-tag">User Interaction</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-overlay"></div>
+      <div class="lightbox-content">
+        <button class="nav-btn prev-btn" id="prevImg" title="Previous Image">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-btn next-btn" id="nextImg" title="Next Image">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-toolbar">
+          <button class="tool-btn" id="zoomOut" title="Zoom Out (-)">
+            <i class="fas fa-minus"></i>
+          </button>
+          <button class="tool-btn" id="zoomIn" title="Zoom In (+)">
+            <i class="fas fa-plus"></i>
+          </button>
+          <button
+            class="tool-btn close-btn"
+            id="closeLightbox"
+            title="Close (Esc)"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="lightbox-img-wrapper">
+          <img id="lightboxImg" src="" alt="View" draggable="false" />
+        </div>
+        <p id="lightbox-caption" class="lightbox-caption"></p>
+      </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+      <svg class="progress-circle" viewBox="0 0 50 50">
+        <circle class="progress-circle-bg" cx="25" cy="25" r="23"></circle>
+        <circle id="progressCircleBar" class="progress-circle-bar" cx="25" cy="25" r="23"></circle>
+      </svg>
+      <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">
+                <span class="footer-logo"></>Pranali Nalavde</span> 
+            </p>
+            <p class="footer-sub">Player Dashboard v1.0 | Built with <i class="fas fa-heart"></i> and Code</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="smarket.js"></script>
+  </body>
+</html>
