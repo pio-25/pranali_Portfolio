@@ -630,7 +630,11 @@ function initProjectModals() {
                     <li>Engineered a low-latency real-time chat system for peer-to-peer commerce.</li>
                 </ul>
                 <a href="smarket.html" class="modal-link">
+<<<<<<< HEAD
                     <i class="fas fa-external-link-alt"></i> View Project Showcase
+=======
+                    <i class="fas fa-external-link-alt"></i> View Project
+>>>>>>> 2ac250e (Updated logo)
                 </a>
             `,
             react: `

@@ -388,10 +388,12 @@ body {
 }
 
 .logo-icon {
-    color: var(--accent-primary);
-    font-family: var(--font-mono);
-    font-size: 1rem;
-    text-shadow: 0 0 12px rgba(245, 169, 193, 0.6);
+    height: 50px;
+    width: auto;
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo-text {
@@ -399,6 +401,8 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-size: 1.25rem;
+    line-height: 1;
 }
 
 .hud-menu {
@@ -1628,6 +1632,13 @@ section:not(#hero) {
 .footer-logo {
     font-family: var(--font-mono);
     color: var(--accent-secondary);
+}
+
+.footer-logo-icon {
+    height: 24px;
+    vertical-align: middle;
+    width: auto;
+    margin-right: 8px;
 }
 
 .footer-sub {

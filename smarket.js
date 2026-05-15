@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('closeLightbox');
     const zoomInBtn = document.getElementById('zoomIn');
     const zoomOutBtn = document.getElementById('zoomOut');
+<<<<<<< HEAD
 
     // Prevent default ghost image dragging in Firefox
     lightboxImg.addEventListener('dragstart', (e) => e.preventDefault());
@@ -13,6 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.getElementById('prevImg');
     const nextBtn = document.getElementById('nextImg');
 
+=======
+    const prevBtn = document.getElementById('prevImg');
+    const nextBtn = document.getElementById('nextImg');
+
+    // Navigation and State
+>>>>>>> 2ac250e (Updated logo)
     let scale = 1;
     let isDragging = false;
     let startX, startY, translateX = 0, translateY = 0;
@@ -20,7 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentCaptionSet = [];
     let currentIndex = 0;
 
+<<<<<<< HEAD
     // Set --i variable for animation delay on each gallery card
+=======
+    // Animation delay for cards
+>>>>>>> 2ac250e (Updated logo)
     galleryItems.forEach((item, index) => {
         item.style.setProperty('--i', index + 1);
     });
@@ -34,9 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const multiCaps = item.getAttribute('data-captions');
 
             currentImageSet = multiImgs ? multiImgs.split(',') : [singleImg];
+<<<<<<< HEAD
             currentCaptionSet = multiCaps ? multiCaps.split(',') : [singleCap];
             currentIndex = 0;
 
+=======
+
+            // Smarter caption handling: if one caption is provided for multiple images, use it for all
+            if (multiCaps) {
+                currentCaptionSet = multiCaps.split(',');
+            } else {
+                currentCaptionSet = Array(currentImageSet.length).fill(singleCap);
+            }
+
+            currentIndex = 0;
+>>>>>>> 2ac250e (Updated logo)
             showImage(currentIndex);
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -44,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function showImage(index) {
+<<<<<<< HEAD
         scale = 1;
         translateX = 0;
         translateY = 0;
@@ -55,6 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
         updateTransform();
 
         // Toggle Navigation Buttons
+=======
+        resetView();
+        lightboxImg.src = currentImageSet[index];
+        lightboxCaption.textContent = currentCaptionSet[index] || currentCaptionSet[0] || '';
+
+        // Navigation visibility
+>>>>>>> 2ac250e (Updated logo)
         if (currentImageSet.length > 1) {
             prevBtn.style.display = 'flex';
             nextBtn.style.display = 'flex';
@@ -69,7 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
         showImage(currentIndex);
     };
 
+<<<<<<< HEAD
     // Close Function
+=======
+>>>>>>> 2ac250e (Updated logo)
     const closeLightbox = () => {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
@@ -77,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resetView();
     };
 
+<<<<<<< HEAD
     closeBtn.addEventListener('click', closeLightbox);
     lightbox.querySelector('.lightbox-overlay').addEventListener('click', closeLightbox);
 
@@ -85,11 +120,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resetView() {
         scale = 1; translateX = 0; translateY = 0; updateTransform();
+=======
+    function resetView() {
+        scale = 1;
+        translateX = 0;
+        translateY = 0;
+        lightboxImg.classList.remove('zoomed', 'grabbing');
+        updateTransform();
+>>>>>>> 2ac250e (Updated logo)
     }
 
     function updateTransform() {
         if (scale <= 1) {
+<<<<<<< HEAD
             scale = 1; translateX = 0; translateY = 0;
+=======
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+>>>>>>> 2ac250e (Updated logo)
             lightboxImg.classList.remove('zoomed');
         } else {
             lightboxImg.classList.add('zoomed');
@@ -97,12 +146,27 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
     }
 
+<<<<<<< HEAD
+=======
+    // Interaction Listeners
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.querySelector('.lightbox-overlay').addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); navigate(-1); });
+    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); navigate(1); });
+
+    // Panning
+>>>>>>> 2ac250e (Updated logo)
     const startDrag = (e) => {
         if (scale > 1) {
             isDragging = true;
             const clientX = e.touches ? e.touches[0].clientX : e.clientX;
             const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+<<<<<<< HEAD
             startX = clientX - translateX; startY = clientY - translateY;
+=======
+            startX = clientX - translateX;
+            startY = clientY - translateY;
+>>>>>>> 2ac250e (Updated logo)
             lightboxImg.classList.add('grabbing');
         }
     };
@@ -112,11 +176,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.cancelable) e.preventDefault();
         const clientX = e.touches ? e.touches[0].clientX : e.clientX;
         const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+<<<<<<< HEAD
         translateX = clientX - startX; translateY = clientY - startY;
         updateTransform();
     };
 
     const stopDrag = () => { isDragging = false; lightboxImg.classList.remove('grabbing'); };
+=======
+        translateX = clientX - startX;
+        translateY = clientY - startY;
+        updateTransform();
+    };
+
+    const stopDrag = () => {
+        isDragging = false;
+        lightboxImg.classList.remove('grabbing');
+    };
+>>>>>>> 2ac250e (Updated logo)
 
     lightboxImg.addEventListener('mousedown', startDrag);
     window.addEventListener('mousemove', moveDrag);
@@ -124,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxImg.addEventListener('touchstart', startDrag, { passive: false });
     window.addEventListener('touchmove', moveDrag, { passive: false });
     window.addEventListener('touchend', stopDrag);
+<<<<<<< HEAD
 
     lightboxImg.addEventListener('dblclick', () => { scale = scale > 1 ? 1 : 2; updateTransform(); });
 
@@ -142,4 +219,67 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
     zoomInBtn.addEventListener('click', (e) => { e.stopPropagation(); if (scale < 3) { scale += 0.25; updateTransform(); } });
     zoomOutBtn.addEventListener('click', (e) => { e.stopPropagation(); if (scale > 0.5) { scale -= 0.25; updateTransform(); } });
+=======
+    lightboxImg.addEventListener('dragstart', (e) => e.preventDefault());
+    lightboxImg.addEventListener('dblclick', () => { scale = scale > 1 ? 1 : 2; updateTransform(); });
+
+    zoomInBtn.addEventListener('click', (e) => { e.stopPropagation(); if (scale < 4) { scale += 0.5; updateTransform(); } });
+    zoomOutBtn.addEventListener('click', (e) => { e.stopPropagation(); if (scale > 0.5) { scale -= 0.5; updateTransform(); } });
+
+    // Keyboard & Wheel Support
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigate(-1);
+        if (e.key === 'ArrowRight') navigate(1);
+        if (e.key === '+' || e.key === '=') zoomInBtn.click();
+        if (e.key === '-' || e.key === '_') zoomOutBtn.click();
+    });
+
+    lightbox.addEventListener('wheel', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        e.preventDefault();
+        const delta = e.deltaY < 0 ? 0.2 : -0.2;
+        scale = Math.max(0.5, Math.min(4, scale + delta));
+        updateTransform();
+    }, { passive: false });
+
+    // Back to Top Logic (Sync with Canva)
+    const backToTopBtn = document.getElementById('backToTop');
+    const progressCircleBar = document.getElementById('progressCircleBar');
+    const circumference = 2 * Math.PI * 23; // Circumference for r=23
+
+    if (backToTopBtn && progressCircleBar) {
+        window.addEventListener('scroll', () => {
+            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollProgress = window.scrollY / scrollTotal;
+            const offset = circumference - (scrollProgress * circumference);
+            progressCircleBar.style.strokeDashoffset = Math.max(0, Math.min(circumference, offset));
+
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        }, { passive: true });
+
+        backToTopBtn.addEventListener('click', () => {
+            // Trigger cursor jump animation if custom cursor exists
+            const cursor = document.querySelector('.custom-cursor');
+            if (cursor) {
+                cursor.classList.remove('jumping');
+                void cursor.offsetWidth; // Trigger reflow
+                cursor.classList.add('jumping');
+                cursor.addEventListener('animationend', () => {
+                    cursor.classList.remove('jumping');
+                }, { once: true });
+            }
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+>>>>>>> 2ac250e (Updated logo)
 });
