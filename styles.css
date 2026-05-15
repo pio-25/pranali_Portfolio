@@ -263,8 +263,8 @@ body.cursor-custom .btn:focus-visible {
     --radius-md: 16px;
     --radius-lg: 24px;
 
-    --font-body: 'Inter', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-mono: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
     --transition-fast: 0.2s ease;
     --transition-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
@@ -294,6 +294,7 @@ html {
 body {
     font-family: var(--font-body);
     background: var(--bg-primary);
+
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
