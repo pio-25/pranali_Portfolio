@@ -34,7 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const multiCaps = item.getAttribute('data-captions');
 
             currentImageSet = multiImgs ? multiImgs.split(',') : [singleImg];
-            currentCaptionSet = multiCaps ? multiCaps.split(',') : [singleCap];
+
+            if (multiCaps) {
+                currentCaptionSet = multiCaps.split(',');
+            } else {
+                currentCaptionSet = Array(currentImageSet.length).fill(singleCap);
+            }
+
             currentIndex = 0;
 
             showImage(currentIndex);
@@ -44,14 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function showImage(index) {
-        scale = 1;
-        translateX = 0;
-        translateY = 0;
-
+        resetView();
         lightboxImg.src = currentImageSet[index];
-        lightboxCaption.textContent = currentCaptionSet[index] || '';
-        lightboxImg.classList.remove('zoomed', 'grabbing');
-        updateTransform();
+        lightboxCaption.textContent = currentCaptionSet[index] || currentCaptionSet[0] || '';
 
         // Toggle Navigation Buttons
         if (currentImageSet.length > 1) {
@@ -180,8 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    zoomInBtn.addEventListener('click', (e) => { e.stopPropagation(); if (scale < 3) { scale += 0.25; updateTransform(); } });
-    zoomOutBtn.addEventListener('click', (e) => { e.stopPropagation(); if (scale > 0.5) { scale -= 0.25; updateTransform(); } });
+    zoomInBtn.addEventListener('click', (e) => { e.stopPropagation(); if (scale < 4) { scale += 0.5; updateTransform(); } });
+    zoomOutBtn.addEventListener('click', (e) => { e.stopPropagation(); if (scale > 0.5) { scale -= 0.5; updateTransform(); } });
 
     // Keyboard Support
     document.addEventListener('keydown', (e) => {
@@ -197,11 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.addEventListener('wheel', (e) => {
         if (!lightbox.classList.contains('active')) return;
         e.preventDefault();
-        if (e.deltaY < 0) { // Zoom in
-            scale = Math.min(3, scale + 0.1);
-        } else { // Zoom out
-            scale = Math.max(0.5, scale - 0.1);
-        }
+        const delta = e.deltaY < 0 ? 0.2 : -0.2;
+        scale = Math.max(0.5, Math.min(4, scale + delta));
         updateTransform();
     }, { passive: false });
 });
