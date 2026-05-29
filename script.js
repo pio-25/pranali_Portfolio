@@ -607,32 +607,6 @@ function initProjectModals() {
                     <i class="fas fa-external-link-alt"></i> View Project
                 </a>
             `,
-            smarket: `
-                <h2><i class="fas fa-shopping-bag"></i> Smarket: UX Ecosystem</h2>
-                <p class="modal-subtitle">Full-Stack E-Commerce & User Experience Design</p>
-                <h3><i class="fas fa-info-circle"></i> Design Philosophy</h3>
-                <p>A user-centric marketplace designed to empower artisans. The focus was on reducing friction in the seller-buyer journey through intuitive navigation, clean UI patterns, and seamless real-time communication.</p>
-                <h3><i class="fas fa-tools"></i> Tech Stack</h3>
-                <div class="modal-tech">
-                    <span class="tech-tag">UX Strategy</span>
-                    <span class="tech-tag">System Design</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">Backend Architecture</span>
-                    <span class="tech-tag">Socket.IO</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">HTML/CSS</span>
-                </div>
-                <h3><i class="fas fa-star"></i> Key Features</h3>
-                <ul>
-                    <li>Architected a multi-role dashboard for sellers and administrators.</li>
-                    <li>Implemented high-fidelity search and filtering logic.</li>
-                    <li>Integrated secure payment gateways with automated invoice generation.</li>
-                    <li>Engineered a low-latency real-time chat system for peer-to-peer commerce.</li>
-                </ul>
-                <a href="smarket.html" class="modal-link">
-                    <i class="fas fa-external-link-alt"></i> View Project Showcase
-                </a>
-            `,
             react: `
                 <h2><i class="fab fa-react"></i> Smarket: React Marketplace</h2>
                 <p class="modal-subtitle">Responsive Frontend Application Development</p>
